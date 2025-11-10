@@ -33,6 +33,16 @@ public class LoginTest extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
 
         //Execute log in with invalid credentials
+        loginPage.login("usuario_invalid", "password_invalid");
+
+        //Add a little wait for loading
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        //Execute log in with invalid credentials
         assertFalse(loginPage.isLogginSuccessfull(),
                 "Login should fail with invalid credentials");
     }

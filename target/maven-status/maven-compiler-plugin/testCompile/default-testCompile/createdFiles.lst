@@ -1,0 +1,11 @@
+com\demoblaze\pages\LoginPage.class
+com\demoblaze\tests\NegativeTest.class
+com\demoblaze\pages\ProductPage.class
+com\demoblaze\tests\CategoriesTest.class
+com\demoblaze\tests\LoginTest.class
+com\demoblaze\utils\BaseTest.class
+com\demoblaze\pages\CartPage.class
+com\demoblaze\pages\HomePage.class
+com\demoblaze\tests\CheckoutTest.class
+com\demoblaze\pages\CheckoutPage.class
+com\demoblaze\tests\DynamicValidationTest.class

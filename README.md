@@ -1,5 +1,12 @@
 # demoblaze-test-automation
-Test automation framework for Demoblaze using Java + Selenium and JYnit 5
+![Java](https://img.shields.io/badge/Java-11-blue)
+![Maven](https://img.shields.io/badge/Maven-3.8-red)
+![TestNg](https://img.shields.io/badge/TestNG-7.5-green)
+![Allure](https://img.shields.io/badge/Allure-Reports-orange)
+![Selenium](https://img.shields.io/badge/Selenium-4.0-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
+
+Test automation framework for [Demoblaze](https://www.demoblaze.com/), an e-commerce web aplication. Built with **Java**, **Selenium WebDriver**, **TestNG**, and **Maven**, following the **Page Object Model (POM)** design pattern to ensure maintainability and scalability of tests.
 
  📋**Features**
    * **Framework:** Selenium WebDriver 4.15.0
@@ -42,26 +49,42 @@ Test automation framework for Demoblaze using Java + Selenium and JYnit 5
 
 📁  **Project structure**
 
-demoblaze-test-Franklin/
-├── src/test/java/com/demoblaze/
-│   ├── pages/               # Page Object Classes
-│   │   ├── HomePage.java
-│   │   ├── LoginPage.java
-│   │   ├── ProductPage.java
-│   │   ├── CartPage.java
-│   │   └── CheckoutPage.java
-│   ├── tests/               # Test Classes
-│   │   ├── LoginTest.java
-│   │   ├── CategoriesTest.java
-│   │   ├── CheckoutTest.java
-│   │   ├── NegativeTest.java
-│   │   └── DynamicValidationTest.java
-│   └── utils/
-│       └── BaseTest.java    # Test Configuration
-├── target/
-│   └── surefire-reports/    # Test Reports
-├── pom.xml                  # Maven Configuration
-└── README.md
+demoblaze-test-automation/
+├── src/
+│   ├── main/
+│   │   └── java/
+│   │       └── com/
+│   │           └── demoblaze/
+│   │               ├── pages/           # Page Object classes
+│   │               │   ├── HomePage.java
+│   │               │   ├── LoginPage.java
+│   │               │   ├── ProductPage.java
+│   │               │   └── CartPage.java
+│   │               └── utils/           # Utility classes
+│   │                   ├── ConfigReader.java
+│   │                   ├── ExcelReader.java
+│   │                   └── ScreenshotUtil.java
+│   └── test/
+│       ├── java/
+│       │   └── com/
+│       │       └── demoblaze/
+│       │           ├── tests/           # Test classes
+│       │           │   ├── LoginTest.java
+│       │           │   ├── ProductTest.java
+│       │           │   └── CartTest.java
+│       │           └── base/             # Base test class
+│       │               └── BaseTest.java
+│       └── resources/
+│           ├── testdata/                  # Test data files
+│           │   └── test-data.json
+│           ├── log4j2.xml                  # Logging configuration
+│           └── allure.properties           # Allure configuration
+├── test-output/                             # Test reports
+├── screenshots/                             # Failure screenshots
+├── logs/                                     # Application logs
+├── pom.xml                                   # Maven configuration
+├── testng.xml                                # TestNG suite configuration
+└── README.md                                 # This file
 
 🧪 **Test coverage**
 
@@ -118,7 +141,7 @@ driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 **Maven Commands**
 
 # Run all tests
-mcn test
+mvn test
 
 # Clean and run tests
 mvn clean test
